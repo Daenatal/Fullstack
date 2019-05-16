@@ -1,0 +1,90 @@
+JQuery----
+
+Lightweight, fast and feature-rich JavaScript library.
+
+It was created to make certain things easier such as document manipulation, event handling, animation and more.
+
+can use the Jquery cdn or another reference in your script tags.
+
+Syntax---
+
+jQuery uses a special syntax for selecting HTML elements and performing actions
+
+$(selector).action()
+
+
+Selectors are the same that CSS uses:
+
+$('h1').hide()
+$('.someClass').hide()
+$('#someId').hide()
+
+Document Ready ---
+
+Used to make sure everything is ready and loaded, prevents JQuery code from running too early
+
+$(document).ready(function() {
+    //code here
+});
+
+$(function() {
+    //code here
+});
+
+Events---
+
+DOM events have an equivalent jQuery event
+
+click(), mousedown(), mouseenter(), mouseleave(), mouseup(), load(), unload(), keyup(), keypress(), keydown()
+
+dblclick(), die(), bind(), unbind(), change(), ready(), toggle(), Scroll(), Resize()
+
+
+Event Syntax---
+
+$('someElement').click(function() {
+    // Do something
+});
+
+Longhand version:
+
+$('someElement').on('click', function() {
+    // Do something
+});
+
+jQuery Effects---
+
+hide() & show(), toggle(), fadeIn(), fadeOut(), fadeToggle(), fadeTo(), slideDown(), slideUp(), slideToggle(), animate(), stop()
+
+DOM Manipulation---
+
+text() - Set or return text content of selected elements
+
+html() - Set or return the content of selected elements
+
+val() - Set or return the value of a form field
+
+attr() - Get attribute values
+
+append() - Insert content at the end of selected items
+
+prepend() - Insert content at the beginning of selected items
+
+after(), before(), remove(), empty(), addClass(), removeClass(), toggleClass()
+
+jQuery & Ajax---
+
+jQuery gives us some tools to make tis a little easier than with plain JavaScript
+
+load() - Loads data from a server and puts it into a selected elements
+
+$(selector).load(URL, data, callback);
+
+get() - Requests data from a server with an HTTP GET Requests
+
+$.get(URL, callback);
+
+
+post() - Requests or submits data to a server with an HTTP POST Requests
+
+$.post(URL, data, callback);

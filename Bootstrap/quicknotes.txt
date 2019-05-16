@@ -1,0 +1,35 @@
+What is Bootstrap?
+
+- A front-end framework for faster and easier web development.
+
+-It includes HTML & CSS templates & components for things like typography, buttons, menus, tables and lists.
+
+-It also includes JavaScript widgets like modals, dropdowns, carousels and accordions.
+
+Compatibility?
+
+Static Websites, Frontend Applications - JavaScripts, JQuery, Angular, React.js, Backend Server-side Applications- Node.js, PHP
+
+Mobile & Hybrid Applications, anything with an interface.
+
+Responsive, look good on any device.
+
+Custom elements-
+
+Typography, Forms, Tables, Buttons, Images
+
+CSS Components----
+
+Glyphicons, Dropdowns, Button Groups, Navbar, Breadcrumbs, Labels, Badges, alerts, jumbotron, etc.
+
+Bootstrap uses over a dozen custom JavaScript/JQuery plugins that can be used by simply including JQuery and the 
+
+bootstrap.js file.
+
+Grid System-
+
+Bootstrap includes a 12 column responsive, mobile-first fluid grid system which uses pre-defined classes and easy layout options.
+
+Container, row an columns, container pushes everything to the middle, horizontal groups of columns are rows to ensure everything lines up correctly.
+
+So a div stretches out to about 12 columns anything bigger won't work when using the class="col-size-length"

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery & Forms</title>
+        <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+        <style>
+            body {
+                overflow: hidden;
+            }
+            .square, .square2 {
+                width: 100px;
+                height: 100px;
+                background: black;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btnHide">Hide</button>
+        <button id="btnShow">Show</button>
+        <button id="btnTog">Toggle</button>
+        <button id="btnFadeOut">Fade Out</button>
+        <button id="btnFadeIn">Fade In</button>
+        <button id="btnFadeTog">Fade Toggle</button>
+        <button id="btnSlideUp">Slide Up</button>
+        <button id="btnSlideDown">Slide Down</button>
+        <button id="btnSlideTog">Slide Toggle</button>
+        <button id="btnStop">Stop</button>
+        <p class="p1">I'm the Doctor, I can save the world with a kettle and some string! And look! I'm wearing a vegetable! I don't want to go. Blimey, trying to make an Ood laugh... Oh, yes. Harmless is just the word: that's why I like it! Doesn't kill, doesn't wound, doesn't maim. But I'll tell you what it does do: it is very good at opening doors! Yeah? Well I'm the Lord of Time. People assume that time is a strict progression of cause-and-effect... but actually, from a non-linear, non-subjective viewpoint, it's more like a big ball of wibbly-wobbly... timey-wimey... stuff.</p>
+        <br><br>
+        <button id="anim">Animate</button>
+        <br><br>
+        <div class="square"></div>
+        <br><br>
+        <button id="anim2">Animate</button>
+        <br><br>
+        <div class="square2"></div>
+        <script>
+            function loop() {
+                $('.square2').animate({
+                    left: '+=1800px'
+                }, 7000).fadeOut(200).animate({left: '-200px'}).fadeIn().animate({left: '+=100px'}, loop);
+            }
+            $(document).ready(function() {
+                $('#btnHide').click(function(){
+                    $('.p1').hide();
+                });
+
+                $('#btnShow').click(function(){
+                    $('.p1').show();
+                });
+                $('#btnTog').click(function(){
+                    $('.p1').toggle();
+                });
+                $('#btnFadeOut').click(function(){
+                    $('.p1').fadeOut(4000);
+                });
+
+                $('#btnFadeIn').click(function(){
+                    $('.p1').fadeIn(2000);
+                });
+                $('#btnFadeTog').click(function(){
+                    $('.p1').fadeToggle(2500);
+                });
+                $('#btnSlideUp').click(function(){
+                    $('.p1').slideUp(2000);
+                });
+
+                $('#btnSlideDown').click(function(){
+                    $('.p1').slideDown(2000);
+                });
+                $('#btnSlideTog').click(function(){
+                    $('.p1').slideToggle(700);
+                });
+                $('#btnStop').click(function() {
+                    $('.p1').stop();
+                });
+                $('#anim').click(function() {
+                    $('.square').animate({
+                        left: '+=250px',
+                        opacity: '0.5',
+                        height: '+=100px',
+                        width: '+=100px'
+                    }, 'fast');
+                });
+
+                $('#anim2').click(loop());
+                //     var div= $('.square2');
+                //     div.animate({height: '400px', opacity: '0.4'}, 'slow');
+                //     div.animate({width: '400px', opacity: '0.8'}, 'slow');
+                //     div.animate({height: '100px', opacity: '0.4'}, 'slow');
+                //     div.animate({width: '100px', opacity: '0.8'}, 'slow');
+                // });
+            });
+        </script>
+    </body>
+</html>

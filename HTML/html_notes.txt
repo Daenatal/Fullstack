@@ -1,0 +1,19 @@
+Block Level Elements----
+
+- Always start on a new line and takes up full available width:
+
+<div> <h1>-<h6> <p> <form>
+
+Inline Level Elements---
+
+- Does not start on a new line, takes only width necessary
+
+<span> <a> <img>
+
+HTML 5----
+
+Syntax is no longer based on SGML(Standard Generalized Markup Language) but is backward compatible with older versions.
+
+HTML5 has new APIs that can be used with JavaScript:
+
+Canvas & SVG, IndexedDB, Drag and Drop, Web Audio, Web Storage, Geolocation, Editable Content, App Cache

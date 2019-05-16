@@ -1,0 +1,11 @@
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\FirstCSharp\bin\Debug\netcoreapp2.1\FirstCSharp.deps.json
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\FirstCSharp\bin\Debug\netcoreapp2.1\FirstCSharp.runtimeconfig.json
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\FirstCSharp\bin\Debug\netcoreapp2.1\FirstCSharp.runtimeconfig.dev.json
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\FirstCSharp\bin\Debug\netcoreapp2.1\FirstCSharp.dll
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\FirstCSharp\bin\Debug\netcoreapp2.1\FirstCSharp.pdb
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\FirstCSharp\obj\Debug\netcoreapp2.1\FirstCSharp.csprojAssemblyReference.cache
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\FirstCSharp\obj\Debug\netcoreapp2.1\FirstCSharp.csproj.CoreCompileInputs.cache
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\FirstCSharp\obj\Debug\netcoreapp2.1\FirstCSharp.AssemblyInfoInputs.cache
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\FirstCSharp\obj\Debug\netcoreapp2.1\FirstCSharp.AssemblyInfo.cs
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\FirstCSharp\obj\Debug\netcoreapp2.1\FirstCSharp.dll
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\FirstCSharp\obj\Debug\netcoreapp2.1\FirstCSharp.pdb

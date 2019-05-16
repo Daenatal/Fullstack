@@ -1,0 +1,38 @@
+I will be learning 20 different technologies within 5 categories. There are 
+40+ projects, mini-projects and code samples planned.
+
+5 Areas- Frontend, Backend, Databases, Essential Technologies, Debugging & Technologies
+
+Frontend Tech:
+
+HTML, HTML5, CSS3, Bootstrap, JavaScript, jQuery
+
+Backend Tech: 
+
+Node.js, Meteor.js(front-end and backend), Angular2, PHP, Ruby on Rails
+
+Database Tech:
+
+MySQL, PostgreSQL, MongoDB, CouchDB
+
+Other Essential Technologies:
+
+Memcached - Telnet commands, libmemcache-tools 
+
+Redis - Caching, data persistence, data types
+
+Markdown - Headings, lists, text formatting
+
+Sass - Variables, mixins, extending, partials, css pre-processor
+
+Version Control & Debug Tech:
+
+GIT - Version Control, repositories, Github
+
+Grunt - Tasks, concatenation, watch mode
+
+Gulp - Minify code, webserver, JSHint
+
+Chrome Developer Tools - Debugging, console, inspection
+
+PHP Debugging & Errors - Error types, debug functions, config

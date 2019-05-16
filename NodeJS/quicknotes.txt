@@ -1,0 +1,85 @@
+What is Node.js?
+
+Node.js is a platform built on Chrome's JavaScript runtime. It's used to build fast, scalable network applications.
+It uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, making it perfect for building
+real-time applications. In other words JavaScript on the server.
+
+
+Asynchronous I/on
+
+- Does not need to wait for one process to finish before starting the other (Non-blocking). Whereas 
+an apache server written in PHP would be synchronous.
+
+- Optimizes throughput and scalability in web appliations with many I/O operations. If heavy duty cpu usage is 
+expected, asynchronous is not the best option, would put a strain on the system.
+
+-Event-Driven programming, makes Node.js apps extremely fast and efficient
+
+Event Loop
+
+- Single-threaded
+
+- Supports concurrency via events and callbacks
+
+- EventEmitter class is used to bind events and events listenrs.
+
+Simple Example
+
+var fs = require("fs"); here we are bringing in the file system module, don't need to install comes with node, works with file paths
+
+fs.readfile('input.txt', function (err, data) {
+    if (err) {
+        console.log(err.stack);
+        return;
+    }
+    console.log(data.toString());
+});
+
+console.log("Program Ended");
+
+Terminal that allows us to run JavaScript
+
+NPM- Node Package Manager, comes with Node.js v0.6.3+, online repositories for node.js packages/modules
+
+Installs into a "node_modules" folder
+
+npm install express (add -g to install globally)
+
+var express = require('express'); express is a framework that is used alot with node.js
+
+Types of Modules---
+
+Frameworks - Express.js
+
+Template Engines - Pug(Jade), EJS, Handlebars
+
+Utilities - Path, OS, API Modules, Compilers
+
+Database ORM - Mongoose, MongoJS
+
+-------------------------
+
+Express is a big framework that gives us a routing system, utility methods, template engines, etc.
+
+in Package.json we can add all the modules we would like installed when running npm install from the 
+
+command terminal.
+
+----------------------------
+
+Express has his concept called middleware, is a function which has access to response and request objects.
+
+Middleware gives access to those methods and objects, can execute any code, can make chnges to req and res, end those cycles
+
+or call the next function in the task.
+
+Node mon, watches your application to see if you save it auto reloads and we don't have to keep restarting the server or the app.
+
+Going over the PUG(Jade) template engine-----
+
+EJS, embedded JavaScript, Mustache, Handlebars
+
+look at https://html2jade.org/ to get pug syntax
+
+Syntax for EJS to get values from our render call is <% = something %>
+

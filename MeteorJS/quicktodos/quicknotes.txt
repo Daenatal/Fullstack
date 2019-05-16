@@ -1,0 +1,9 @@
+We want to work with the client and server folders, whatever we code into client runs on the front end, and vice versa.
+
+iron router for meteor.
+
+We place the lib directory in the root directory for the project so both client and server code can see it.
+
+Ran accounts-ui and accounts-password to add user login functionality, worth noting that there is also accounts-twiter etc.
+
+To make this more secure we are not going to run commands like insert in the client.

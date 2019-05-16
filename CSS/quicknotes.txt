@@ -1,0 +1,24 @@
+CSS is a style sheet language that describes the style of an HTML document
+and how HTML elements should be displayed.
+
+CSS can be placed in <style></style> tags or stored in external .css files.
+
+Two main parts are the selector and the declaration. Declaration consists of 
+a property and a value.
+
+Four different position values:
+
+static, relative, fixed, and absolute
+
+Static is default, not affected by top, bottom, left, right properties.
+
+Relative, positioned relative to its normal position
+
+position: relative
+left: 30px;
+
+Fixed is relative to the viewport, how it looks in the browser window.
+
+Absolute, is positioned relative  to the nearest positioned ancestor.
+
+Flexbox is a flex container, with some flex items inside.

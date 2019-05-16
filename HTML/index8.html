@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Storage</title>
+    </head>
+    <body>
+        <div id="name"></div>
+
+        <script>
+            //If you want temporary storage you use sessionStorage instead ie sessionStorage.setItem
+
+            //test to see if browser supports localStorage
+            if(typeof(Storage) !== "undefined") {
+                //Store an item, can also store JSON but converted into a string
+                localStorage.setItem('name', 'John Doe');
+
+                // Get Item
+                //console.log(localStorage.getItem('name'));
+                console.log(localStorage.name); //this can be used alternatively
+
+                // Remove Item
+                localStorage.removeItem('name');
+                if(localStorage.name) {
+                    document.getElementById('name').innerHTML=localStorage.getItem('name');
+                } else {
+                    document.getElementById('name').innerHTML='No name found';
+                }
+            } else {
+                console.log('LocalStorage Not Available');
+            }
+        </script>
+    </body>
+</html>

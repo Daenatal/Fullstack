@@ -1,0 +1,82 @@
+body {
+    background: rgb(100, 180, 226);
+    color: rgb(228, 240, 229);
+    line-height: 1.4em;
+}
+
+a {
+    color: rgb(228, 240, 229);
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+}
+
+.clr{
+    clear:both;
+}
+
+#container {
+    background: rgb(24, 202, 128);
+    width: 960px;
+    margin: 30px auto;
+    overflow:hidden;
+    padding: 10px;
+}
+
+#nav {
+    height: 40px;
+    background: rgb(54, 114, 79);
+}
+
+#nav ul{
+    padding-top: 13px;
+    padding-Left: 10px;
+}
+
+#nav li{
+    display: inline-block;
+    padding-right: 20px;
+}
+
+#nav .active{
+    font-weight: bold;
+    color: rgb(175, 186, 199);
+}
+
+#main {
+    float: left;
+    width: 60%;
+}
+
+#sidebar{
+    float:right;
+    width:30%;
+    background: rgb(54, 114, 79);
+    margin-top: 20px;
+    padding:10px;
+}
+
+#footer{
+    text-align: center;
+    padding: 10px;
+    background: rgb(54, 114, 79);
+    margin-top: 30px;
+}
+
+.services li {
+    border-bottom: 2px #666 dashed;
+    padding-bottom: 20px;
+}
+
+.services a {
+    background: rgb(54, 114, 79);
+    padding: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+}

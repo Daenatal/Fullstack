@@ -1,0 +1,167 @@
+JavaScript Output---
+
+console.log('some value')-Prints to console in browser or terminal
+
+windows.aert()-Displays in an alert box in the browser
+
+document.write()-Display within <script> tags in the html
+
+innerHTML- access an element using document.getElementById() and output to it.
+
+Variables--
+
+Used to store values var x = 100;
+
+They are case sensitive, can contain letters, numbers, underscores and dollar signs.
+
+Must begin with a letter, underscore, or dollar sign.
+
+Expressions--
+
+Combination of alues, variables and operators which computes a value.
+
+Loops--
+
+For and While:
+
+while(i < 10){
+    console.log(i);
+    i++;
+}
+
+Objects----
+
+Almost everything in JS can be considered an "object". Objects have properties and methods (functions)
+
+//Assign properties
+
+var person= {name:"Mike", age:33, hairColor:"Brown"}
+
+//Acess Property
+
+console.log(person.name); //Mike
+
+//Accessing method
+
+person.getName()
+
+Conditionals/ If Statements run a block of code accordingly.
+
+Switch---
+
+Selects one of many blocks of code to execute. Often used as an alternative to an if Statements
+
+Switch(x){
+    case 1:
+            console.log('Yes x is 1');
+            break;
+    case 2: 
+            console.log('Yes x is 2');
+            break;
+    case 3:
+            console.log('No x is not 1 or 2');
+            break;
+}
+
+Functions are a block of code designed to run a task. Can be created and then invoked later on.
+
+function sayHello(){
+    console.log('Hello World');
+}
+
+can also pass in parameters, which are considered arguments
+
+function sayHello(greeting){
+    console.log(greeting);
+}
+
+couple of events in JS:
+
+onblur, onchange, onfocus, onselect, onsubmit, onreset, onkeydown, onkeyup, onkeypress, onload
+
+AJAX----
+
+Asynchronous Javascript & XML
+
+Used to update specific parts of a web page without reloading the whole page. Exchanges small amont of data with the server behind the scene
+gmail, google maps, youtube, etc all use AJAX.
+
+XMLHttpRequest Object----
+
+An API that provides client functionality for transferring data between a client and server.
+
+Easy way to retrive data from a URL without having to do a full page refresh
+
+XMLHttpRequest is not limited to XML. It also can use JSON, file and FTP.
+
+XMLHttpRequest Properties----
+
+onreadystatechnage, readyState, response, responseText, responseType, responseURL, responseXML, status, statusText
+
+timeout, ontimeout, upload, withCredentials
+
+Methods---
+
+abort(), getAllResponseHeaders(), getResponseHeader(), open(), overrideMimeType(), send(), setRequestHeader()
+
+
+Creating the XHR(XMLHttpRequest) Object------
+
+var xhttp;
+if (window.XMLHttpRequest){
+    xhttp = new XMLHttpRequest();
+} else {
+    // code for IE6, IE5
+    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+Sending a Request----
+
+xhttp.open("GET", "somefile.txt", true);
+
+xhttp.send();
+
+GET/POST----
+
+Get - is faster but should only be used to request data from a server.
+
+Post - is usually used to send a large amount of data to the server or send user input.
+
+
+A good example for Get would be a search form and POST would be a registration form.
+
+Getting A Response----
+
+xmlDoc = xhttp.responseXML;
+
+txt= "";
+
+x = xmlDoc.getElementsByTagName("ARTIST");
+for (i = 0; i < x.length; i++) {
+    txt += x[i].childNodes[0].nodeValue + "<br>";
+}
+
+document.getElementById("demo").innerHTML = txt;
+
+Events-----
+
+onReadyState - Stores a function to be called everytime the readyState changes
+
+readyState - Holds the status of the XMLHttpRequest object (0 - 4)
+
+0: request not initialized
+1: server connection established
+2: request received
+3: processing request
+4: request finished and response is ready
+
+Status - Request status
+
+200: OK 
+404: Page Not Found
+
+Github api is a json api we can use.
+
+Wrap xhttp.responseText in a JSON.parse function, to convert the response into a usable JSON format.
+
+JSON.parse(xhttp.responseText);

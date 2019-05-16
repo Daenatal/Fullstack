@@ -1,0 +1,73 @@
+What is Meteor.js?
+
+Technically a full stack JavaScript framework, that works on both front and back end, to make reactive applications.
+
+Used for both web and mobile based apps.
+
+Subscriptions & Publications?
+
+- Many frameworks use a request/response format, meteor uses DDP instead.
+
+- Create subscriptions to data sources through DDP(Distributed Data Protocol), subscriptions are updated accordingly as app changes
+
+- Uses publication endpoints, can push data from server to the client
+
+Saving Data----
+
+Uses MongoDB, collections in the backend to store data.
+
+Also uses Minimongo library in the frontend which is an in-memory implementation of MongoDB. Resembles a table in a relational database.
+
+Minimongo subscribes to a publication and pulls/pushes data to and from MongoDB, code that runs in a server in one folder vs client in another folder.
+
+Todos = new Mongo.Collection('Todos');
+
+Meteor Packages----
+
+Meteor has its own package system.
+
+Packages are small, external modules with varying functionality.
+
+With the release of v1.3, Meteor has full support for NPM modules.
+
+Atmosphere packages are packages written specifically for Meteor
+
+$ meteor add packagename
+$ meteor npm install packagename
+
+Views/Templates---
+
+Meteor supports 3 UI rendering libraries:
+
+Blaze - Hnadlebars-like syntax {{myVar}}
+
+React - JSX- Writing HTML in JavaScript
+
+Angular - HTML with special attribute syntax
+
+User & Accounts----
+
+-DDP has a built in UserID field
+
+- Login state gets tracked
+
+- Good starting point for custom account systems
+
+- For more user-based functionality, packages are used such as accounts-base.
+
+- accounts-base has a users collection with a standard schema along with a variety of methods
+to do things like track state and validate users.
+
+Testing-----
+
+Unit Testing - Testing one small module
+
+Integration Testing - Testing multiple modules behave well together
+
+Acceptance Testing - Testing browser, button functionality, etc.
+
+Load Test - Test how app handles under load
+
+Want to actually create a publication and subscription model. take off insecure and autopublish always
+
+To add bootstrap we use twbs:bootstrap

@@ -1,0 +1,69 @@
+What is PHP?
+
+Open source server-side programming language used to build powerful web applications.
+
+Directly embedded in html using <? php ?> tags, executed on server then generates html to send to 
+
+client. Easy language with advanced features, interpreted at runtime, no compiling.
+
+Cross platform (linux, windows, mac)
+
+Server to parse .php files - Apache, IIS, etc, database isn't required but you can use MySQL, PostgreSQL
+
+Can use bundled software like XAMMP or WAMP server.
+
+
+Why use it?
+
+It's free & open source, popular, widely used with great documentation, works great with databses of 
+
+all types (Relational, NoSQL, etc). Multi-paradigm (Functional, OOP), tons of Frameworks such as 
+
+Laravel, CakePHP, Codeigniter.
+
+<?php //code goes here ?>
+
+Variables----
+
+Holds different type of data and have to begin with a dollar sign ($) name must start with a letter or underscore,
+
+cannot start with a number, can only contain numbers, letters and underscores
+
+$myVar = 'Hello World';
+$_myNum = 5;
+
+Arrays---
+
+$myArray = Array('val1', 'val2', 'val3'); or $myArray = Array(); $myArray[0] = 'val1'; etc
+
+<?php echo $myArray[1]; ?>
+
+Functions---
+
+Blocks of code that perform functions, must be defined and then called.
+
+function greet(){
+    echo 'Hello World';
+}
+
+greet();
+
+Submitting Form Data [Post]---
+
+<form method="POST" action="script.php"> form is being submitted to the file script.php
+    <input type="text" name="name">
+    <input type="text" name="email">
+    <button type="submit">Submit</button>
+</form>
+
+//script.php we can access the values of the form using a superglobal
+<?php echo $_POST['name']; ?>
+<?php echo $_POST['email']; ?> using superglobal $_POST
+
+Getting URL Params [GET]--
+
+http://something.com/index.php?greeting=Hello&name=documentation
+
+//index.php
+<?php echo $_GET['greeting']; ?> get superglobal, passing data fromt he URL
+<?php echo $_GET['name']; ?>

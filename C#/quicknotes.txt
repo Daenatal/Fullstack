@@ -1,0 +1,97 @@
+Program.cs is the starting point of every project.
+
+ProjName.csproj: file that references dependencies
+
+Anytime we make changes run dotnet restore, script that reads .csproj and 
+
+triggers NuGet to download the appropriate packages.
+
+When we run or build the code, we compile it into a .dll file.
+
+Static typing----
+
+string name = "Tim"
+int age = 30
+double height = 1.905
+bool blueEyed = false
+
+Creating a random object---
+
+Random rand = new Random();
+
+.Next() , .Next(Int32) random # from 0 to Int32
+.Next(Int32, Int32) random from a to b 
+
+.NextDouble() random decimal
+
+Random rand = new Random();
+for(int val = 0; val < 10; val++) {
+    Console.WriteLine(rand.Next(2,8));
+}
+
+int[] num Array = new int[5] or {1,2,3,4,6}
+int[] array3;
+array3 = new int[] {1,3,5,7,9};
+
+for (int i = 0; i< array.Length; i++) {
+    Console.WriteLine(array[i]);
+} 
+
+Shortcut for this: 
+
+foreach (string i in array) {
+    Console.WriteLine($"The word is {i}");
+}
+
+Generic lists-- implementation of linked lists that act very much
+like JavaScript. Lets you freely add and remove things as well as access values 
+by index independent of a declared size. Lists are objects.
+
+include: using System.Collections.Generic;
+
+List<string> bikes = new List<string>(); initiliaze
+
+Add items:
+
+bikes.add("Bike1");
+bikes.add("Bike2");  //access with bike[1]
+
+bikes.Count returns 2
+
+<string> is a generic type, can't change types but we can make blueprints
+
+for (int i = 0, i < bikes.Count; i++) {
+    Console.WriteLine(bikes[i]);
+}
+
+bikes.Insert(2, "Bike3"); to remove use bikes.Remove("Bike3"); or bikes.RemoveAt(0);
+
+Shortcut:
+foreach (string bike in bikes){
+    Console.WriteLine(bike);
+}
+
+Dictionary Class:
+
+Dictionary<string,string> profile = new Dictionary<string,string>();
+
+profile.Add("Name, "Jesus");
+profile.Add("Language", "C#");
+profile.Add("Location", "USA");
+
+to access: profile["Name"]; output is Jesus
+
+foreach (KeyValuePair<string,string> entry in profile)
+{
+    Console.WriteLine(entry.Key + entry.Value) output should be Name and Jesus
+}
+
+Shortcut for KeyValuePair:
+
+foreach (var entry in profile) type-inference var replaces KeyValuePair
+
+
+multidimensional arrays are possible using:
+
+int [,] array2D = new int[3,2]; thi creates an array with 3 arrays inside of Length
+

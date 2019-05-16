@@ -1,0 +1,7 @@
+Technologies used---
+
+Express, Mongojs, EJS, passport, mongodb, express-messages
+
+express validator, express session, connect-flash, passport passport-local(can also use gmail facebook etc), bcrypt, body-parser
+
+Since we installed bootstrap via npm we want to go to the app.js file and make a static path for the bootstrap

@@ -1,0 +1,89 @@
+Angular2, new framework
+
+What is it?
+
+Client side framework for building web applications using JavaScript
+
+Complete framework not a library like Jquery, this is HTML for web applications.
+
+More functionality with less code, used often with single page applications (SPA), dynamically update the page, giving a much more fluid experience
+
+Attributes called directives.
+
+Features & Advantages---
+
+Speed & Performance asynch
+
+Cross Platform, mobile and hybrid, IONIC uses Angular for UI components
+
+Comprehensive Routing
+
+2 Way Data Binding can easily setup, makes UI update when model is updated.
+
+Dynamic Templates
+
+Component Encapsulation(app is divided into components that can be reused)
+
+
+Building With Components----
+
+Division of responsibilities, reusable code, easier to read, easy for multiple developer collaboration.
+
+Controllers and scope no longer part of angular 2.
+
+
+Typescript----
+
+A typed superset of JavaScript that compiles to plain JavaScript
+
+Support for classes
+
+Static checking and code refactoring
+
+Use of decorators, allows us to attach metadata
+
+
+Example---
+
+@Component({ //decorator is @ and component
+    selector: 'mycomponent',
+    template: '<h1>Hello World</h1>
+})
+
+export class MyComponent {
+    constructor() {
+        this.name = "John Doe";
+    }
+}
+
+director must match selector <mycomponent></mycomponent>
+
+Services----
+
+- Used to organize and share code and resources across an applications
+
+- Services are great for things like API's and database access, want code to be in a service so all components can access it.
+
+- Services are lazily instantiated, angular only starts a service when an application component depends on it
+
+- Services are injected through the component class constructor
+
+Routing---
+
+-Interprets a browser URL as an instruction
+
+- Can be passed optional parameters to help decide what content to display
+
+- We can bind the router to links on a page and it will navigate to the appropriate application view when 
+
+the user clicks a link.
+
+Security Best Practices---
+
+- Keep up to date with teh latest library releases.
+
+- Do not modify your copy of angular.
+
+- Avoid APIs marked "Security Risk".
+
+Angular cli we can look at later
