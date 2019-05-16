@@ -1,0 +1,1 @@
+Hello, these are the projects I have thoroughly worked on to get an understanding of Web Development as a whole. I still have more to add and I will update this repository with more projects and examples of the languages and technologies I have grasped and utilized for useful and practical applications.
