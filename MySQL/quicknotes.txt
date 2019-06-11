@@ -1,0 +1,161 @@
+What is MySQL?
+
+Open source relational database management system (RDBMS)
+
+- Stores data/records in tables
+
+- Data is seperated into columns
+
+- Uses SQL (Structured Query Language)
+
+Advantages? 
+
+- High Performance, unique storage architecture, high availability, mem cache, indexes, etc, data protection.
+
+- Ease of Use, Great Support & Documentation, open source and free! SSH and SSL are supported
+
+Disadvantages?
+
+A few stability issues, not as scalable as some other types of databases like noSQL, references, transactions and auditing should be looked into.
+
+Development has been a little laggy, some limitations, not fully SQL compliant
+
+Tools--
+
+There is MySQL Client, PHPMyAdmin, Workbench, Sequel Pro, HeidiSQL, MyDBStudio
+
+What is SQL?
+
+Structured query language, it was designed to work with databases, declarative language with procedural elements. 
+
+Many database systems support SQL, not just MySQL
+
+Based on relational algebra & tuple relational calculas, scope includes insert, query, update and delete
+
+Language Elements:
+
+Clauses: WHERE clause, constituent components of statements and queries (somtimes optional)
+
+Expressions: Can produce scalar values or tables consisting of columns and rows
+
+Predicates: Specify conditions that can be evaluated to SQL true/false/unknown and are used to limit the effects 
+
+of some statements and queries or to change program flow.
+
+Queries: Retrieve data based on criteria
+
+Statement: All of the above together. 
+
+Primary Key Constraint---
+
+Most tables should have one though it is not required, uniquely identifies each record, must contain unique values, can not contain null values, one per table.
+
+Auto-Increment
+
+- Allows a unique number to be generated when a new record is inserted into a table, usually added to the id field, increment by 1 by default, 
+
+don't need to specify an id on inserts if the id is AI.
+
+Default--
+
+Used to insert a default value into a column, will be added to new records if not specified otherwise
+
+Common Operations/Queries: SELECT, INSERT, UPDATE, delete
+
+Common clauses & operators: WHREE, JOIN, LIKE, IN, BETWEEN
+
+QUERIES RUN IN MYPHPADMIN:
+
+CREATE DATABASE mystore;
+
+CREATE TABLE customers(
+	id INT NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    street_address VARCHAR(255),
+    city VARCHAR(255),
+    state VARCHAR(255),
+    zip VARCHAR(255),
+    PRIMARY KEY(id)
+); making a table with all the columns that will hold info, setting id as primary key and auto incrementing it
+
+INSERT INTO customers(first_name, last_name, email, password, street_address, city, state, zip) VALUES ('Juan', 'Gomez', 'jgomez@joke.com', 'abcd', '21 Bolero St', 'Chicago', 'IL', '60060'), ('Sherry', 'Short', 'ssherr@test.com', 'frogs', '56 Bosco St', 'Easton', 'NC', '70150'),
+ ('Rich', 'Brooks', 'rbrooks@yahoo.com', 'pass', '1202 Wall Rd', 'Mahon', 'TX', '54021'), ('Rush', 'Stoggz', 'rstoggz@maps.com', 'squids', '44 Brooks Ave', 'Boise', 'ID', '40050'), ('Jerome', 'Garths', 'younggar@gmail.com', 'abcdtrx', '586 Boggart St', 'Mendal', 'WA', '23009'), 
+ ('Bill', 'Bonds', 'billbo@aol.com', 'youngmouse', '52 Augden Ave', 'Chips', 'MO', '40544') inserted 6 rows of information
+
+ SELECT * FROM customers gets all the data in the customers table
+
+ SELECT * FROM customers WHERE city LIKE 'B%'; this pulls up rows where the city starts with the letter B can use multiple search criteria besides just 'B'
+
+ SELECT * FROM customers WHERE city = 'Chicago' OR city = 'Boston'; search multiple parameters but we can USE IN instead:
+
+ SELECT * FROM customers WHERE city IN('Chicago', 'Boston', 'Boise') to do the same thing without having to keep writing OR criteria = something
+
+
+ Distinct, Aliases & Concat
+
+ SELECT DISTINCT city FROM customers this returns unique values, even if multiple rows have the same value we only get one instance of the reference.
+
+ SELECT first_name AS 'First Name', last_name AS 'Last Name' from customers returns the column name as a much nicer format we specify
+
+ SELECT CONCAT(first_name, ' ', last_name) AS 'Name', CONCAT(street_address, ' ', city, ' ', state) AS 'Address' FROM customers can return results as a combined string using CONCAT
+
+UPDATE customers SET last_name = 'Smith' WHERE id = 3;
+
+DELETE FROM customers WHERE id = 7;
+
+ALTER TABLE customers ADD/REMOVE "column_name" if adding use data type 
+
+ALTER TABLE customers MODIFY "column_name" and data type to change to
+
+Making two more tables, products and orders, orders will hold the customer id and the product id making it a join table
+
+Foreign keys prevent data corruption, below we create our orders table and define our foreign keys:
+
+CREATE TABLE orders(
+	id INT NOT NULL AUTO_INCREMENT,
+    order_number INT, 
+    product_id INT,
+    customer_id INT,
+    order_date DATETIME default CURRENT_TIMESTAMP,
+    PRIMARY KEY(id),
+    FOREIGN KEY(customer_id) REFERENCES customers(id),
+    FOREIGN KEY(product_id) REFERENCES products(id)
+);
+
+INSERT INTO orders (order_number, customer_id, product_id) VALUES (2,1,3)
+
+JOIN statements, inner, right, left, and full joins
+
+Inner JOIN:
+
+SELECT customers.first_name, customers.last_name, orders.id, orders.order_number
+FROM customers
+INNER JOIN orders
+ON customers.id = orders.customer_id //here we specify what matches what on both of the tables
+
+Left JOIN:
+
+SELECT  customers.first_name, customers.last_name, orders.order_number, orders.order_date
+FROM customers
+LEFT JOIN orders ON customers.id = orders.customer_id,
+ORDER BY customers.last_name 
+
+Getting all of the customers even if they don't have an order, an inner join would be better. 
+
+Right JOIN: 
+
+SELECT  customers.first_name, customers.last_name, orders.order_number, orders.order_date
+FROM customers
+RIGHT JOIN orders ON customers.id = orders.customer_id
+ORDER BY customers.last_name
+
+Works better here because it gets all of the data in the right table orders, and they all have customers attached to them.
+
+SELECT customers.first_name, customers.last_name, orders.order_number, orders.order_date, products.name FROM orders INNER JOIN products ON orders.product_id = products.id INNER JOIN customers ON orders.customer_id = customers.id ORDER BY orders.order_number
+
+Putting it all together:
+
+SELECT CONCAT(customers.first_name, ' ', customers.last_name) AS 'Name', CONCAT(orders.order_number, ' ', orders.order_date) AS 'Order', products.name AS 'Product', products.price FROM orders INNER JOIN products ON orders.product_id = products.id INNER JOIN customers ON orders.customer_id = customers.id ORDER BY orders.order_number

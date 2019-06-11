@@ -95,3 +95,60 @@ multidimensional arrays are possible using:
 
 int [,] array2D = new int[3,2]; thi creates an array with 3 arrays inside of Length
 
+to create a new app use: 
+
+dotnet new console -o NameOfProject
+
+class inside of an object called a constructor.
+
+In OOP, member describes anything listed within a class definition, in C# 
+
+there are three kinds of class members for us to work with. 
+
+1. Fields- variables declared within a class, may be of any time.
+
+2. Methods- Functions delared within a class, declare their return type, and type of args
+
+3. Properties - between field and method, appears to be a field but behaves as method.
+
+Works by using two keywords, known as property accessors: get and set, used for saftey.
+
+get { return $"this thing is {Color}";} set {Color = value;}
+
+Invoke with vehicleObject.ColorProp = "Blue"; sets
+
+Encapsulaion - Hide internal implementation from ouside code as much as possible. 
+
+A common practice, is to use properties to be a public "wrapper" for our private fields. 
+
+By using only a getter, we can provide public read-only access to our private fields.
+
+Inheritance saves us the trouble of creating new code by taking what's already there. 
+
+When on class inherits from another, it gains all the members of the parent class. It will 
+
+also pass onto and child classes of the child. Thus an inheritance chain.
+
+We pass needed variables using the base: keyword
+
+Can also method override: include virtual in the parent method and 
+
+then use override in the child method, remember to use protected or children will not 
+
+be able to access members that are set to private access modifier.
+
+Interfaces---- can be used to share behavior between any class without the need for inheritance! 
+
+Instead of describing what an object is, it describes what an object can do!
+
+We only build the method signature, containing return type, method name, and input parameters.
+
+void ExampleMethod(string parameterA, int parameterB); that's it naming convention uses I + DescriptionOfBehavior
+
+Only method signatures and properties can be used in interfaces.
+
+IEnumerable = behavior of being looped through or enumerate, interface for that behavior 
+
+Abstract classes, when you want a parent class the can be built into specific child classes, cannot be implement as objects. 
+
+Abstract methods only take a signature much like interfaces, that the child classes must implement

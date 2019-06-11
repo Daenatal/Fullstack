@@ -1,0 +1,93 @@
+What is NoSQL?
+
+Different type of storage than traditional tabular relations used in RDBMS
+
+It means not only sql, non relational sql.
+
+Simplified design, horizontal scaling and finer control. 
+
+Increasingly popular with "big data" and real-time web applications, companies like google or twitter have moved to this.
+
+Advantages---
+
+Big data, hold more, no explicit schema or table structure(having to plan out tables and relationships), allows us to create
+
+collections on the fly, scale out architecture, less expensive and less management, not having to pay admins to manage the database.
+
+Disadvantages---
+
+Maturity, relatively new, support & community still in development, not many people with nosql experience. Ad hoc query and analysis, so tools 
+
+don't provide connections to nosql databases. 
+
+Horizontal Scaling (Out/In) adding more nodes to a system, one web server to three, adding more computer to a distributed sytem. 
+
+Hundreds of small computers can be configured in a "cluster" into one massive powerful unit.
+
+Vertical Scaling--- 
+
+Relational databases tend to do this:
+
+Adding high end resources to a single node in the system, resources may include CPU, memory, drives, etc.
+
+Uses virtualization technology more efficiently.
+
+Typically horizontal scaling is better and less expensive.
+
+
+Types of NoSQL databases:
+
+Column: Cassandra, Hbase, Vertica
+
+Document: MongoDB, CouchDb, Rethink
+
+Key/Value: Couchbase, Dynamo, Memcached, Redis
+
+Graph: Neo4J, MarkLogic
+
+Column Database----
+
+A column of a distributed data store is a NoSQL object of the lowest level in a keyspace. It is a tuple (a key-value pair) 
+
+consisting of three elements: Unique name, value, and a timestamp
+
+Key/ Value store
+
+Data storage paradigm designed for storing, retrieving, and managing associative arrays, more commonly known today as a 
+
+dictionary or hash. Value can have multiple sub values.
+
+
+Graph Database---
+
+Database tha uses graph structures for semantic queries with nodes, edges and properties to represent and store data. Key 
+
+concept of the system is the graph (or edge or relationship), which directly relates data items in the store.
+
+Document Database---
+
+Designed for storing, retrieving, and managing document oriented information, also known as semi-structured data. Data is 
+
+stored in JSON-like documents. 
+
+BSON is a binary representation of JSON.
+
+MongoDB uses a combination of the GNU AGPL and Apache license.
+
+Schema less, structure of a single object is clear. No complex joins, deeper query ability. Easy to scale out.
+
+Documents are rows and collections are tables in MongoDB
+
+See data types that documents can hold.
+
+commands:
+
+use projectmanagement to get into a db or create one if it does not exist.
+
+db.createCollection('projects'); -- creates a collection/table
+
+db.projects.insert({name: 'Company Website',category: 'Web Design',due_date: new Date('2016-12-12'),technologies: ['HTML', 'CSS', 'Javascript'],developers: [{name: 'Jesus Becerra',role: 'Head Programmer'},{name: 'John Doe',role: 'Designer'}],client: {name: 'Steven Smith',email: 'ssmith@gmail.com',phone: '555-555-5555'},cost: 2000});
+
+and then to see what was stored we can use db.projects.find();
+
+Or we can do db.projects.find().pretty(); to make it look nicer.

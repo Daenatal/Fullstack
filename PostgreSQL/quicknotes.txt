@@ -1,0 +1,62 @@
+What is PostgreSQL?
+
+Open source relational database management system (RDBMS) developed by a worldwide team of volunteers.
+
+Not controlled by any corporation, stores data/records in tables, data is seperated into columns, uses PostgreSQL
+
+Advantages? 
+
+Designed for high-volume environment, MVCC, responsive, reliability and stability, very extensible, GUI database design & admin tools.
+
+Implements SQL standard very well, JSON support & NoSQL
+
+Disadvantage?
+
+Usability curve, a little slower than MySQL (Read-heavy operations)
+
+Not as popular
+
+Max table size 32 TB,
+
+Maximum Row size 1.6 TB
+
+Max field size 1GB
+
+columns 600
+
+Tools? 
+
+phpPgAdmin, PG Client, PG Admin III, PSequel, SQL Tabs, Navicat
+
+General Data Types: Character, Serial, Big Serial, UUID universal unique identifier
+
+Commands...to connect to the database in the shell use:
+
+psql -U postgres 
+
+It will then ask for the password, afterwards to connect to a database use \c database 
+
+To see tables in the database use \dt
+
+If you try to login with a user, it'll try to log you into a database psql -U devuser for example so we 
+need a database the user has been added onto, in our example we had acme.
+
+CREATE USER devuser WITH PASSWORD 'peanut18';
+
+SELECT * FROM pg_user;
+
+ALTER USER devuser WITH SUPERUSER;
+
+GRANT ALL ON database acme TO devuser;
+
+CREATE TABLE articles(id SERIAL PRIMARY KEY, title VARCHAR(255), body TEXT); creating a table with the fields, SERIAL meants 
+
+it auto increments.
+
+INSERT INTO articles(title, body) VALUES('Article One', 'This is the body for article one');
+
+ALTER TABLE articles ADD COLUMN category_id INT; adding a column to a table.
+
+ALTER TABLE articles ADD CONSTRAINT catfk FOREIGN KEY(category_id) REFERENCES categories(id);
+
+DELETE FROM articles WHERE id = 3;

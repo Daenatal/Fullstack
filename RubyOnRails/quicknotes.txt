@@ -1,0 +1,78 @@
+It is a framework for building web applications built on top of the Ruby Language.
+
+What is Ruby?
+
+Ruby is a dynamic, reflective, object-oriented, general purpose programming Language, desktop & web apps
+
+It was influenced by Perl, Smalltalk, Eiffel & Lisp
+
+Supports multiple paradigms - Functional, OOP & Imperative, don't have to declare variable types
+
+Uses a dynamic type system
+
+Ruby Principles---
+
+Creator really wanted it to mimic the english language, similar to python
+
+Keep it Simple, Limited punctuation, English Keywords, See everything as an object, be flexible, code blocks.
+
+Cross Platform, can also install in linux and mac, I am working in Windows.
+
+RubyGems---
+
+It is a package manager for Ruby used to install "Gems"
+
+Gems are self-contained packages or modules, inside are code, documentation and a gemspec(like package.json).
+
+Bundler is used to manage and track gems.
+
+Gem dependences should be listed in the Gemfile.
+
+Both the RubyGems and Bundler are included in Railinstaller.
+
+What Is Rails?----
+
+Server-side web application framework written in the Ruby programming language
+
+Write less code while accomplish more than many other languages and frameworks, uses the mvc design pattern.
+
+Created in 2005
+
+What is MVC?---
+
+Model-View-Controller is an architectural pattern for implementing user interfaces:
+
+-Model manages the data, logic and rules of the application
+
+-View output representation of information (Templates, UI)
+
+-Controller Accepts input and converts it to commands for the model or View
+
+So why use Rails?---
+
+Abstracts and simplifies common repetitive tasks, saves much time.
+
+Fast prototyping & deployment (productivity)
+
+Vibrant community and support 
+
+CLI Tool(scaffolding available), RubyGems library, Quality Code, testing automation, many database options
+
+Hulu, Groupon, Twitter, BaseCamp, all use Rails
+
+Creating an app is easy just use - rails new myapp, run it with rails server or rails s, generate with rails generate,
+
+interact with your app using rails console or rails c 
+
+Rails Router----
+
+The routing system takes in a url with parameters and decides which controller action method should be run.
+
+GET customers/25
+
+Get '/cusotmers/:id', to : 'customers#show'
+
+config/routes.rb is where we define all our routes.
+
+Resource routes, allows us to declare common routes instead of seperate routes for index, show, new, etc...
+

@@ -1,0 +1,11 @@
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\Functions\obj\Debug\netcoreapp2.1\Functions.csprojAssemblyReference.cache
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\Functions\obj\Debug\netcoreapp2.1\Functions.csproj.CoreCompileInputs.cache
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\Functions\obj\Debug\netcoreapp2.1\Functions.AssemblyInfoInputs.cache
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\Functions\obj\Debug\netcoreapp2.1\Functions.AssemblyInfo.cs
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\Functions\bin\Debug\netcoreapp2.1\Functions.deps.json
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\Functions\bin\Debug\netcoreapp2.1\Functions.runtimeconfig.json
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\Functions\bin\Debug\netcoreapp2.1\Functions.runtimeconfig.dev.json
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\Functions\bin\Debug\netcoreapp2.1\Functions.dll
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\Functions\bin\Debug\netcoreapp2.1\Functions.pdb
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\Functions\obj\Debug\netcoreapp2.1\Functions.dll
+C:\Users\Daenatal\Desktop\FullStack\C#\baseprojects\Functions\obj\Debug\netcoreapp2.1\Functions.pdb
