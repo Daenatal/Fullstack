@@ -1,0 +1,50 @@
+@model IndexViewModel
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Using Multiple Models</title>
+        <meta charset="utc-8">
+        <link rel="stylesheet" href="~/css/style.css">
+    </head>
+    <body>
+        <div id="container">
+            <h1>Welcome to Multi-Form Version 2</h1>
+            <div class="productForm">
+                <h2>Add a Product</h2>
+                <form action="/create/product2" method="post">
+                    <div class="form-group">
+                        <span class="red" asp-validation-for="ProductObject.Name"></span>
+                        <br>
+                        <label asp-for="ProductObject.Name"></label>
+                        <input asp-for="ProductObject.Name">
+                    </div>
+                    <div class="form-group">
+                        <span class="red" asp-validation-for="ProductObject.Price"></span>
+                        <br>
+                        <label asp-for="ProductObject.Price"></label>
+                        <input asp-for="ProductObject.Price">
+                    </div>
+                    <input type="submit" value="Add Product">
+                </form>
+            </div>
+            <div class="userForm">
+                <h2>Add a User</h2>
+                <form action="/create/user2" method="post">
+                    <div class="form-group">
+                        <span class="red" asp-validation-for="UserObject.Username"></span>
+                        <br>
+                        <label asp-for="UserObject.Username"></label>
+                        <input asp-for="UserObject.Username">
+                    </div>
+                    <div class="form-group">
+                        <span class="red" asp-validation-for="UserObject.Age"></span>
+                        <br>
+                        <label asp-for="UserObject.Age"></label>
+                        <input asp-for="UserObject.Age">
+                    </div>
+                    <input type="submit" value="Add User">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

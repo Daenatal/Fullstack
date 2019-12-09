@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin : 0;
+}
+body {
+    background: rgb(136, 238, 136);
+    color: rgb(85, 100, 236);
+    padding: 0;
+    width: 720px;
+    margin: 0 auto;
+}
+
+#container {
+    margin-top: 0;
+    background-color: rgb(190, 174, 174);
+}
+
+h1 {
+    text-align: center;
+}
+.form-group {
+    margin: 5px;
+    padding: 10px;
+}
+
+input[type=submit] {
+    margin: 0 50px;
+}
+
+.productForm {
+    margin-left: 120px;
+    width: 200px;
+    display: inline-block;
+}
+
+.userForm {
+    margin-left: 140px;
+    width: 200px;
+    display: inline-block;
+}
+
+.red {
+    color: red;
+}

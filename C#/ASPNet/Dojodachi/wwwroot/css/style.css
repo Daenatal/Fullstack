@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    width: 720px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+#container {
+    width: auto;
+    padding: 0 50px;
+    text-align: center;
+}
+
+.space {
+    margin: 0 20px;
+}
+
+#character-display {
+    width: 500px;
+    height: 400px;
+    background-color: blue;
+    margin: 10px 40px;
+    padding: 10px;
+}
+
+img.resize {
+    width: 500px;
+    height: 400px;
+}

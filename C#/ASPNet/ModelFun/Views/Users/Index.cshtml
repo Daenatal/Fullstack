@@ -1,0 +1,34 @@
+@model ModelFun.Models.Quote;
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utc-8">
+        <title>Models Example</title>
+        <link rel="stylesheet" href="~/css/style.css">
+    </head>
+    <body>
+        <h1>Current Users</h1>
+        @foreach(var user in ViewBag.Users)
+        {
+            <li>@user["FirstName"] @user["LastName"]</li>
+        }
+        <br><br>
+        <h1>Latest Quotes</h1>
+        @foreach(var quote in ViewBag.Quotes)
+        {
+            <p>@quote["Title"] at around @quote["Time"]</p>
+            <p> - @quote["Body"]</p>
+        }
+        <h2>Submit a Quote!</h2>
+        <form action="sendQuote" method="post">
+            <label>Enter Title:</label>
+            <input type="text" name="Title">
+            <br><br>
+            <label>Enter Content:</label>
+            <br><br>
+            <textarea name="Body" placeholder="Enter up to 255 characters..."></textarea>
+            <br><br>
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>

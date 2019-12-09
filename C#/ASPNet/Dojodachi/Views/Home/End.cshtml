@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to Dojodachi</title>
+        <meta charset="utc-8">
+        <link rel="stylesheet" href="~/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Welcome to your Dojodachi Game</h1>
+            <br><br>
+            <p><span class="space">Happiness: <span id="status-happy">@ViewBag.Critter.Happiness</span></span> <span class="space">Fullness: <span id="status-full">@ViewBag.Critter.Fullness</span></span>  <span class="space">Meals: <span id="status-meal">@ViewBag.Critter.Meals</span></span>  <span class="space">Energy: <span id="status-energy">@ViewBag.Critter.Energy</span></span></p>
+            <p><span id="message">Your Dojodachi has passed away...sorry</span></p>
+            <div id="character-display">
+                <img class="resize" src="~/images/slime_over.gif"></img>
+            </div>
+            <button><a href="/restart">Restart</button>
+        </div>
+    </body>
+</html>

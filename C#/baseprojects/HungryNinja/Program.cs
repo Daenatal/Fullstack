@@ -36,6 +36,8 @@ namespace HungryNinja
             // {
             //     Sam.eat(NinjaJoint.Serve());
             // }
+            string castSpell = Console.ReadLine();
+            Console.WriteLine(castSpell + " has been cast!");
         }
     }
 }

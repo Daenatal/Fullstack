@@ -1,0 +1,32 @@
+@model Student
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utc-8">
+        <title>Survey Submit</title>
+        <link rel="stylesheet" href="~/css/style.css">
+    </head>
+    <body>
+        <h1>Take Our Survey</h1>
+        <form action="formSubmitted" method="post">
+            <span class="red" asp-validation-for="Name"></span>
+            <br>
+            <label>Your Name:</label>
+            <input type="text" name="Name">
+            <br>
+            <label>Dojo Location:</label>
+            <select name="Location">
+                <option value="New York">New York</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Seattle">Seattle</option>
+            </select>
+            <br>
+            <span class="red" asp-validation-for="Content"></span>
+            <br>
+            <label>Comment:</label>
+            <textarea name="Content"></textarea>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

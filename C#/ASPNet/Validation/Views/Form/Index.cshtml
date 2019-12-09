@@ -1,0 +1,59 @@
+@model User
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utc-8">
+        <title>Survey Submit</title>
+        <link rel="stylesheet" href="~/css/style.css">
+    </head>
+    <body>
+        <p>Loading previous User...@Model.FirstName @Model.LastName @Model.Date</p>
+        @{
+            User NotStan = new User()
+            {
+                FirstName = "NotStan",
+                LastName= "StanNot",
+                Age = 33,
+                Email = "test@test.com",
+                Password = "passwordnumber",
+                Date = DateTime.Now
+            };
+        }
+        <partial name="NavPartial" view-data="ViewData" model="NotStan"></partial>
+        <h1>Enter Your Information</h1>
+        <form asp-action="registered" asp-controller="Form" method="post">
+            <span class="red" asp-validation-for="FirstName"></span>
+            <br>
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName">
+            <br>
+            <span class="red" asp-validation-for="LastName"></span>
+            <br>
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName">
+            <br>
+            <span class="red" asp-validation-for="Age"></span>
+            <br>
+            <label asp-for="Age"></label>
+            <input asp-for="Age">
+            <br>
+            <span class="red" asp-validation-for="Email"></span>
+            <br>
+            <label asp-for="Email"></label>
+            <input asp-for="Email">
+            <br>
+            <span class="red" asp-validation-for="Password"></span>
+            <br>
+            <label asp-for="Password"></label>
+            <input asp-for="Password">
+            <br>
+            <span class="red" asp-validation-for="Date"></span>
+            <br>
+            <label asp-for="Date"></label>
+            <input asp-for="Date">
+            <br>
+            <br>
+            <input type="submit" value="Register">
+        </form>
+    </body>
+</html>

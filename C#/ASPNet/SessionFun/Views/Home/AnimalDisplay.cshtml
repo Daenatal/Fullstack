@@ -1,0 +1,59 @@
+@model Animal
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Using Session</title>
+        <meta charset="utc-8">
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    </head>
+    <body>
+        <h1>Here is your Animal</h1>
+        <p>Name: @ViewBag.Animal.Name</p>
+        <p>Age: @ViewBag.Animal.Age</p>
+        <p>Species: @ViewBag.Animal.Species</p>
+
+        <button class="update">Update Animal List</button>
+
+        <form action="animalsPost" method="post">
+            <label>Animal Name:</label>
+            <input type="text" name="Name">
+            <br>
+            <label>Animal Age: </label>
+            <input type="number" name="Age">
+            <br>
+            <label>Animal Species</label>
+            <input type="text" name="Species">
+            <br>
+            <input type="submit" value="Submit Animal">
+        </form>
+        <script>
+            $(document).ready(function(){
+                $.get("animals2", function(res){
+                    console.log(res);
+                }, "json");
+                $("form").submit(function() {
+                    $.post("animalsPost", $("form").serialize(), function(res){
+                        console.log(res);
+                        $('input[type="text"], input[type="number"]').val('');
+                    });
+                    return false;
+                    
+                });
+                $('.update').click(function(){
+                    $.get("zoo", function(res){
+                        var totalanimals = Object.keys(res).length;
+                        console.log(totalanimals);
+                        console.log(res);
+                        for( var i = 0; i < totalanimals; i++)
+                        {
+                            if(res[i].name == "Hawk")
+                            {
+                                console.log("We have a match");
+                            }
+                        }
+                    }, "json");
+                });
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+@model User
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Me</a></li>
+        <p>@ViewBag.Message @ViewBag.CurrentTime</p>
+        <p> Hello new user... @Model.FirstName @Model.LastName @Model.Date</p>
+    </ul>
+</nav>

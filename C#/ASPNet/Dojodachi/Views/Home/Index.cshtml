@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to Dojodachi</title>
+        <meta charset="utc-8">
+        <link rel="stylesheet" href="~/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Welcome to your Dojodachi Game</h1>
+            <br><br>
+            <p><span class="space">Happiness: <span id="status-happy">@ViewBag.Critter.Happiness</span></span> <span class="space">Fullness: <span id="status-full">@ViewBag.Critter.Fullness</span></span>  <span class="space">Meals: <span id="status-meal">@ViewBag.Critter.Meals</span></span>  <span class="space">Energy: <span id="status-energy">@ViewBag.Critter.Energy</span></span></p>
+            <p><span id="message"></span></p>
+            <div id="character-display">
+                <img class="resize" src="~/images/slime1.jpg"></img>
+            </div>
+            <div class="action-bar">
+                <button id="feed">Feed</button>
+                <button id="play">Play</button>
+                <button id="work">Work</button>
+                <button id="sleep">Sleep</button>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#feed').click(function() {
+                    console.log($(this).html());
+                    $.get("feed", function(res) {
+                        $("#status-full").html(res[0]);
+                        $("#status-meal").html(res[1]);
+                        $("#message").html(res[2]);
+                        $(".resize").attr('src', res[3]);
+                        if(res[4] == true)
+                        {
+                            $("#message").html("Your pet has perished...sorry");
+                            $(".resize").attr('src', '/images/slime_over.gif');
+                            $(".action-bar").html('<button><a href="/restart">Restart</a></button>');
+                        }
+                        if(res[5] == true)
+                        {
+                            $("#message").html("Your pet has been well loved and grown to be able to take care of itself! You win!");
+                            $(".resize").attr('src', 'images/slimewin.gif');
+                            $(".action-bar").html('<button><a href="/restart">Restart</a></button>');
+                        }
+                    });
+                });
+                $('#play').click(function() {
+                    console.log($(this).html());
+                    $.get("play", function(res) {
+                        $("#status-happy").html(res[0]);
+                        $("#status-energy").html(res[1]);
+                        $("#message").html(res[2]);
+                        $(".resize").attr('src', res[3]);
+                        if(res[4] == true)
+                        {
+                            $("#message").html("Your pet has perished...sorry");
+                            $(".resize").attr('src', '/images/slime_over.gif');
+                            $(".action-bar").html('<button><a href="/restart">Restart</a></button>');
+                        }
+                        if(res[5] == true)
+                        {
+                            $("#message").html("Your pet has been well loved and grown to be able to take care of itself! You win!");
+                            $(".resize").attr('src', 'images/slimewin.gif');
+                            $(".action-bar").html('<button><a href="/restart">Restart</a></button>');
+                        }
+                    });
+                });
+                $('#work').click(function() {
+                    console.log($(this).html());
+                    $.get("work", function(res) {
+                        $("#status-meal").html(res[0]);
+                        $("#status-energy").html(res[1]);
+                        $("#message").html(res[2]);
+                        $(".resize").attr('src', res[3]);
+                        console.log(res);
+                    });
+                });
+                $('#sleep').click(function() {
+                    console.log($(this).html());
+                    $.get("sleep", function(res) {
+                        $("#status-happy").html(res[0]);
+                        $("#status-full").html(res[1]);
+                        $("#status-energy").html(res[2]);
+                        $("#message").html(res[3]);
+                        $(".resize").attr('src', res[4]);
+                        if(res[5] == true)
+                        {
+                            $("#message").html("Your pet has perished...sorry");
+                            $(".resize").attr('src', '/images/slime_over.gif');
+                            $(".action-bar").html('<button><a href="/restart">Restart</a></button>');
+                        }
+                        if(res[6] == true)
+                        {
+                            $("#message").html("Your pet has been well loved and grown to be able to take care of itself! You win!");
+                            $(".resize").attr('src', 'images/slimewin.gif');
+                            $(".action-bar").html('<button><a href="/restart">Restart</a></button>');
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

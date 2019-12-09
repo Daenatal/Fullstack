@@ -1,0 +1,66 @@
+To start an ASP.NET application we use: dotnet new web --no-https -o ProjectName 
+
+--no-https lets use access our web app without having to generate https cets for our local browsers.
+
+Perfect for development environment, to set our error feedback to show in developer mode use  setx ASPNETCORE_ENVIRONMENT Development
+
+To set back just change it to Production 
+
+We can also use dotnet watch run so any changes we make to our web apps are automatically added to our running server.
+
+Dependency Injection and OOP go hand in hand with the MVC Framework.
+
+for DI, you can provide objects that any class might need, known as services, to a shared container.
+
+Anytime a class requires a service, we can inject that object into the class. We do this by doing 
+constructor injection, to bring any services into a class by accepting an object of the desired service into 
+the constructor ethod of that class.
+
+Controllers directory is needed, one controller.cs file for each major reference such as user or product.
+
+Contoller method that delivers a server response is called an Action. What differs actions from every other 
+
+method is the fact that it is matched with a route that delivers a valid reponse.
+
+Attributes are special types of classes that will use Attribute in the class name, however we can omit it when we use the class.
+
+[RouteAttribute] - [Route("")] is the default or root url localhost:5000, [Route("users")] = localhost:5000/users 
+
+[HttpMethodAttribute] - [HttpGet] or [HttpPost] use the appropriate http verb 
+
+Can combine them both [HttpMethodAttribute(Route)] = [HttpGet("users")] 
+
+Can include parameters in the Route attribute [Route("users/{username}")]
+
+Redirect to action response RedirectToAction() remember actions are controller methods, return type is RedirectToActionResult 
+
+We can return either RedirectToActionResult or ViewResult or JsonResult by using the interface IActionResult
+
+ViewBag - A way to send data from controllers to our views, it is a dictionary that persists only one view return. 
+
+Does not persist across redirects. To use it we define properties and assign values to them.
+
+ViewBag.example = "a string" property is example, name can be anything it is arbitrary. 
+
+In the View rendered, we can access the data stored in view bag using @ViewBag.example 
+
+Models, refer to namespace as YourModel.Models, resides in a model directory.
+
+Model validation: built into the framework, need to use the Tag Helpers library, to do that we need a 
+
+cshtml file called _ViewImports in our view files, we can also run the CLI command dotnet new viewimports -o Views/ 
+
+To implement validations, need to use Attributes called DataAnnotations 
+
+To gain access to this useful attribute we have to use the statement to include it: 
+
+using System.ComponentModel.DataAnnotations; we then apply them to each field in a similar manner to our http and route attributes
+
+ModelState is a dictionary that contains information on the most recent model we've run validations on
+
+We render rather than redirect to preserve any errors found, since the ModelState data only persists one render.
+
+Other than using Session to store info, we need something that just persists one redirect, something that viewbag can't handle.
+
+Use TempData["Variable"] = "message";
+    return RedirectToAction("other method"); -> in other method Console.WriteLine(TempData["Variable"]);
